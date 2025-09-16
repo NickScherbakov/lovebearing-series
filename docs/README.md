@@ -1,88 +1,88 @@
-# LoveBearing Series Website
+# LoveBearing Series 网站
 
-Это статический сайт для проекта LoveBearing Series, размещенный на GitHub Pages.
+这是 LoveBearing Series 项目的静态网站，部署在 GitHub Pages 上。
 
-## Структура сайта
+## 网站结构
 
 ```
 docs/
-├── index.html          # Главная страница
-├── stories.html        # Страница со всеми историями
+├── index.html          # 首页
+├── stories.html        # 所有故事的页面
 ├── css/
-│   └── style.css       # Основные стили
+│   └── style.css       # 基础样式
 ├── js/
-│   ├── main.js         # Основной JavaScript
-│   └── stories.js      # JavaScript для страницы историй
-├── favicon.svg         # Иконка сайта
-└── .nojekyll          # Файл для отключения Jekyll
+│   ├── main.js         # 主 JavaScript
+│   └── stories.js      # 故事页面的 JavaScript
+├── favicon.svg         # 网站图标
+└── .nojekyll          # 用于禁用 Jekyll 的文件
 ```
 
-## Настройка GitHub Pages
+## GitHub Pages 配置
 
-1. Перейдите в настройки репозитория
-2. В разделе "Pages" выберите:
-   - Source: "Deploy from a branch"
-   - Branch: "main"
-   - Folder: "/docs"
-3. Сохраните настройки
+1. 打开仓库 Settings（设置）
+2. 在 “Pages” 部分选择：
+   - Source: “Deploy from a branch”
+   - Branch: “main”
+   - Folder: “/docs”
+3. 保存设置
 
-## Разработка
+## 开发
 
-### Локальный запуск
+### 本地启动
 ```bash
-# Из корневой папки репозитория
+# 在仓库根目录执行
 cd docs
 python -m http.server 8000
-# Или используйте любой другой локальный сервер
+# 或使用任何其他本地服务器
 ```
 
-### Добавление новых историй
+### 添加新故事
 
-Истории добавляются в файл `js/stories.js` в массив `sampleStories`. В будущем это можно заменить на API или автоматическую загрузку из папки stories репозитория.
+故事数据添加在 `js/stories.js` 的 `sampleStories` 数组中。未来可替换为 API 或从仓库 stories 目录自动加载。
 
-### Структура истории
+### 故事结构
 
 ```javascript
 {
     id: 1,
-    title: "Название истории",
-    author: "Автор",
+    title: "故事标题",
+    author: "作者",
     type: "student|teacher|parent|alumni",
     subject: "math|chinese|english|physics|chemistry|biology|history|geography|politics|general",
     date: "2025-09-XX",
-    tags: ["тег1", "тег2"],
-    excerpt: "Краткое описание...",
-    content: "Полный текст в формате Markdown...",
+    tags: ["标签1", "标签2"],
+    excerpt: "简要描述...",
+    content: "Markdown 格式的全文...",
     likes: 0,
     views: 0
 }
 ```
 
-## Функциональность
+## 功能特性
 
-- ✅ Адаптивный дизайн для мобильных устройств
-- ✅ Фильтрация и сортировка историй
-- ✅ Модальное окно для чтения полных историй
-- ✅ Плавная прокрутка и анимации
-- ✅ Современный UI с градиентами и тенями
+- ✅ 移动端自适应设计
+- ✅ 故事过滤与排序
+- ✅ 阅读全文的模态窗口
+- ✅ 平滑滚动与动画
+- ✅ 现代化 UI（渐变与阴影）
 
-## Будущие улучшения
+## 未来改进
 
-- [ ] Интеграция с GitHub API для автоматической загрузки историй
-- [ ] Система комментариев
-- [ ] Поиск по историям
-- [ ] Темная тема
-- [ ] PWA функциональность
-- [ ] Многоязычная поддержка
+- [ ] 集成 GitHub API 自动加载故事
+- [ ] 评论系统
+- [ ] 故事搜索
+- [ ] 深色模式
+- [ ] PWA 功能
+- [ ] 多语言支持
 
-## Технологии
+## 技术栈
 
 - HTML5
-- CSS3 (Flexbox, Grid, Animations)
-- Vanilla JavaScript
-- Marked.js для парсинга Markdown
-- Google Fonts (Noto Sans SC)
+- CSS3（Flexbox、Grid、Animations）
+- 原生 JavaScript
+- Marked.js（用于解析 Markdown）
+- Google Fonts（Noto Sans SC）
 
-## Лицензия
+## 许可证
 
-MIT License - см. LICENSE файл в корне репозитория.
+MIT License - 详见仓库根目录的 LICENSE 文件。
