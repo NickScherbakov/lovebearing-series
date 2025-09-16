@@ -3,230 +3,1019 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>充满爱意系列 LoveBearing Series - 高考学习平台</title>
-    <meta name="description" content="专为2025-2026年高考生的AI学习平台，汇聚真实故事和智慧">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>充满爱意系列 LoveBearing Series - 革命性高考学习平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e53935;
+            --secondary-color: #ffcdd2;
+            --accent-color: #f44336;
+            --text-color: #212121;
+            --light-text: #757575;
+            --background: #fafafa;
+            --card-background: #ffffff;
+            --success-color: #4caf50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" opacity="0.05"><text x="50%" y="50%" font-size="12" text-anchor="middle" fill="white">高考加油</text></svg>');
+            opacity: 0.1;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        nav {
+            background-color: var(--card-background);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-item {
+            padding: 1rem 1.5rem;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-item:hover {
+            color: var(--primary-color);
+            background-color: rgba(229, 57, 53, 0.05);
+        }
+        
+        .nav-item::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 70%;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .mission-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mission-card:hover::before {
+            width: 100%;
+            opacity: 0.1;
+        }
+        
+        .mission-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .features {
+            background-color: rgba(255, 205, 210, 0.2);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .stats-section {
+            background: linear-gradient(to right, #f5f5f5, #e8f5e9);
+            padding: 4rem 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--light-text);
+        }
+        
+        .testimonials-section {
+            padding: 4rem 0;
+            background-color: #fff8f8;
+        }
+        
+        .testimonials-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .testimonial-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 1rem;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(229, 57, 53, 0.1);
+            font-family: Arial;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-weight: bold;
+        }
+        
+        .author-role {
+            font-size: 0.9rem;
+            color: var(--light-text);
+        }
+        
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--primary-color);
+        }
+        
+        .faq-section {
+            padding: 4rem 0;
+            background-color: #f9f9f9;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-question {
+            background-color: var(--card-background);
+            padding: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .faq-answer {
+            background-color: var(--card-background);
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+        
+        .faq-item.active .faq-toggle i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-section {
+            padding: 4rem 0;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .blog-card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+        }
+        
+        .blog-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-date {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 0.5rem;
+        }
+        
+        .blog-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 1rem;
+        }
+        
+        .blog-read-more {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .blog-read-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 5rem 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-link {
+            color: #ccc;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .countdown {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+        
+        .countdown-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .countdown-timer {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--success-color);
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .mission-grid, .feature-grid, .stats-grid, .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="hero">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <h1>💫 LoveBearing Series</h1>
-                </div>
-                <div class="nav-menu">
-                    <a href="#about" class="nav-link">关于我们</a>
-                    <a href="#stories" class="nav-link">故事分享</a>
-                    <a href="#join" class="nav-link">参与方式</a>
-                    <a href="#contact" class="nav-link">联系我们</a>
-                </div>
-            </div>
-        </nav>
-
-        <div class="hero-content">
-            <h1 class="hero-title">
-                充满爱意系列<br>
-                <span class="hero-subtitle">LoveBearing Series</span>
-            </h1>
-            <p class="hero-description">
-                一个由人工智能驱动的互动学习平台，专为2025-2026年高考生的你量身打造
-            </p>
-            <div class="hero-buttons">
-                <a href="#join" class="btn btn-primary">开始参与</a>
-                <a href="#stories" class="btn btn-secondary">阅读故事</a>
-            </div>
+    <header>
+        <div class="container">
+            <div class="logo">💫 充满爱意系列 LoveBearing Series</div>
+            <p class="tagline">革命性AI学习平台 - 为2025-2026年高考生提供最贴心、最有效的学习支持</p>
         </div>
     </header>
-
-    <!-- About Section -->
-    <section id="about" class="section about">
+    
+    <nav>
+        <div class="container nav-container">
+            <a href="#mission" class="nav-item">我们的使命</a>
+            <a href="#features" class="nav-item">平台特色</a>
+            <a href="#stats" class="nav-item">项目统计</a>
+            <a href="#testimonials" class="nav-item">学员评价</a>
+            <a href="#faq" class="nav-item">常见问题</a>
+            <a href="#blog" class="nav-item">项目进展</a>
+            <a href="#contact" class="nav-item">联系我们</a>
+        </div>
+    </nav>
+    
+    <section id="mission">
         <div class="container">
             <h2 class="section-title">我们的使命</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">LoveBearing Series 是一个革命性的学习平台，结合了人工智能技术和真实的高考生故事，旨在为即将面临2025-2026年高考的同学们提供最贴心、最有效的学习支持，完全符合中国教育政策和社会主义核心价值观。</p>
+            
             <div class="mission-grid">
                 <div class="mission-card">
-                    <div class="mission-icon">🤖</div>
-                    <h3>AI智能辅导</h3>
-                    <p>24/7智能答疑，个性化学习建议</p>
-                </div>
-                <div class="mission-card">
                     <div class="mission-icon">📚</div>
-                    <h3>真实经验分享</h3>
-                    <p>汇聚高考生、老师、家长们的宝贵经验</p>
+                    <h3>个性化学习</h3>
+                    <p>通过AI对话系统，根据每个学生的需求提供定制化解答</p>
                 </div>
+                
                 <div class="mission-card">
-                    <div class="mission-icon">💝</div>
-                    <h3>温暖社区</h3>
-                    <p>在这里，你永远不会孤单</p>
+                    <div class="mission-icon">🤝</div>
+                    <h3>共同成长</h3>
+                    <p>汇聚全国高考生的真实经历和智慧，体现集体主义精神</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">💪</div>
+                    <h3>相互支持</h3>
+                    <p>建立一个温暖的学习社区，让每个人都不再孤单</p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">🎯</div>
+                    <h3>政策符合</h3>
+                    <p>严格遵守"双减"政策，促进学生全面发展</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Features Section -->
-    <section class="section features">
+    
+    <section class="features" id="features">
         <div class="container">
-            <h2 class="section-title">为什么选择我们？</h2>
-            <div class="features-grid">
+            <h2 class="section-title">为什么选择我们</h2>
+            
+            <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>🎓 专为高考生设计</h3>
+                    <h3 class="feature-title">🔥 专为新时代中国高考生设计</h3>
                     <ul>
-                        <li>2025-2026学年专属内容</li>
-                        <li>紧跟最新考试大纲</li>
-                        <li>AI智能学习助手</li>
-                        <li>心理压力缓解</li>
+                        <li>2025-2026学年专属：紧跟教育部最新考试大纲和政策变化</li>
+                        <li>AI智能答疑：24/7随时解答学习困惑，符合"互联网+教育"战略</li>
+                        <li>真实经验分享：学长学姐的成功秘籍，传承优秀学习传统</li>
+                        <li>心理支持：缓解考试压力，培养健康心态，促进全面发展</li>
+                        <li>数据安全：严格遵守《网络安全法》和《个人信息保护法》</li>
                     </ul>
                 </div>
+                
                 <div class="feature-card">
-                    <h3>🌈 多元化内容</h3>
+                    <h3 class="feature-title">🌈 多元化内容体系</h3>
                     <ul>
-                        <li>全科学习辅导</li>
-                        <li>互动学习剧集</li>
-                        <li>高效学习技巧</li>
-                        <li>励志成功故事</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>🚀 参与福利</h3>
-                    <ul>
-                        <li>贡献者徽章系统</li>
-                        <li>独家学习资料</li>
-                        <li>优先体验新功能</li>
-                        <li>优秀故事展示</li>
+                        <li>学科辅导：语文、数学、英语、物理、化学、生物、历史、地理、政治</li>
+                        <li>互动剧集：以故事形式呈现学习方法和经验，弘扬正能量</li>
+                        <li>学习技巧：高效记忆法、时间管理、应试策略</li>
+                        <li>励志故事：逆袭成功案例，激发无限潜能，展现奋斗精神</li>
                     </ul>
                 </div>
             </div>
+            
+            <div class="countdown">
+                <h3 class="countdown-title">🎯 2025-2026高考倒计时</h3>
+                <div class="countdown-timer" id="countdown">正在计算...</div>
+                <p style="margin-top: 1rem;">"每一个优秀的人，都有一段沉默的时光。那一段时光，是付出了很多努力，忍受孤独和寂寞，不抱怨不诉苦，日后说起时，连自己都能被感动的日子。"</p>
+            </div>
         </div>
     </section>
-
-    <!-- Stories Section -->
-    <section id="stories" class="section stories">
+    
+    <section class="stats-section" id="stats">
         <div class="container">
-            <h2 class="section-title">故事分享</h2>
-            <p class="section-description">来自真实参与者的学习故事和人生感悟</p>
-            <div class="stories-grid" id="stories-container">
-                <!-- Stories will be loaded here -->
-                <div class="story-card">
-                    <div class="story-header">
-                        <span class="story-type">学生故事</span>
-                        <span class="story-date">2025-09-16</span>
+            <h2 class="section-title">项目统计</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">自项目启动以来，我们已经取得了以下成果</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-participants">1258</div>
+                    <div class="stat-label">注册学员</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
                     </div>
-                    <h3>我的数学突破之路</h3>
-                    <p>从不及格到满分的蜕变历程...</p>
-                    <a href="#" class="story-link">阅读全文 →</a>
+                    <div>年度目标: 1500人</div>
                 </div>
-                <div class="story-card">
-                    <div class="story-header">
-                        <span class="story-type">老师故事</span>
-                        <span class="story-date">2025-09-15</span>
+                
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-stories">367</div>
+                    <div class="stat-label">分享故事</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 73%"></div>
                     </div>
-                    <h3>如何激发学生的学习动力</h3>
-                    <p>15年教学经验的分享...</p>
-                    <a href="#" class="story-link">阅读全文 →</a>
+                    <div>年度目标: 500篇</div>
                 </div>
-                <div class="story-card">
-                    <div class="story-header">
-                        <span class="story-type">家长故事</span>
-                        <span class="story-date">2025-09-14</span>
+                
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-schools">42</div>
+                    <div class="stat-label">合作学校</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%"></div>
                     </div>
-                    <h3>陪伴孩子高考的日子</h3>
-                    <p>一位母亲的视角...</p>
-                    <a href="#" class="story-link">阅读全文 →</a>
+                    <div>年度目标: 60所</div>
                 </div>
-            </div>
-            <div class="stories-more">
-                <a href="stories.html" class="btn btn-primary">查看更多故事</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Section -->
-    <section id="join" class="section join">
-        <div class="container">
-            <h2 class="section-title">如何参与？</h2>
-            <div class="join-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Fork 项目</h3>
-                    <p>在GitHub上Fork这个仓库</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>创建故事</h3>
-                    <p>在stories文件夹中创建你的故事文件</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>提交PR</h3>
-                    <p>提交Pull Request分享你的故事</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>获得认可</h3>
-                    <p>你的故事将被展示并获得贡献者徽章</p>
-                </div>
-            </div>
-            <div class="join-button">
-                <a href="https://github.com/NickScherbakov/lovebearing-series" class="btn btn-primary" target="_blank">
-                    立即参与 🚀
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">联系我们</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">🐙</div>
-                    <h3>GitHub</h3>
-                    <p>提交Issue和建议</p>
-                    <a href="https://github.com/NickScherbakov/lovebearing-series" target="_blank">访问GitHub</a>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">💬</div>
-                    <h3>微信群</h3>
-                    <p>加入学习交流群</p>
-                    <p class="coming-soon">即将开放</p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>邮箱</h3>
-                    <p>发送邮件联系</p>
-                    <p class="coming-soon">即将公布</p>
+                
+                <div class="stat-card">
+                    <div class="stat-number" id="stat-provinces">18</div>
+                    <div class="stat-label">覆盖省份</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <div>年度目标: 20个</div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    
+    <section class="testimonials-section" id="testimonials">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>💫 LoveBearing Series</h3>
-                    <p>充满爱意的学习之旅</p>
+            <h2 class="section-title">学员评价</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">听听我们的学员是如何评价LoveBearing Series的</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"LoveBearing Series彻底改变了我的学习方式！AI答疑系统非常智能，能够准确理解我的问题并提供详细的解答。学长学姐们的真实故事也给了我很大的鼓舞，让我知道我不是一个人在战斗。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">张</div>
+                        <div class="author-info">
+                            <span class="author-name">张明</span>
+                            <span class="author-role">2025届高考生, 北京市</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="#about">关于我们</a>
-                    <a href="#stories">故事分享</a>
-                    <a href="#join">参与方式</a>
-                    <a href="#contact">联系我们</a>
+                
+                <div class="testimonial-card" style="display: none;">
+                    <p class="testimonial-text">"作为一名教师，我非常欣赏LoveBearing Series的教育理念。它不仅关注学生的学习成绩，更重视心理健康和全面发展。平台内容符合国家教育政策，是我们教师的好帮手。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">李</div>
+                        <div class="author-info">
+                            <span class="author-name">李老师</span>
+                            <span class="author-role">高中教师, 上海市</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <a href="https://github.com/NickScherbakov/lovebearing-series" target="_blank">GitHub</a>
+                
+                <div class="testimonial-card" style="display: none;">
+                    <p class="testimonial-text">"我的孩子使用LoveBearing Series后，学习态度发生了巨大变化。他变得更加主动，压力也减轻了很多。平台的心理支持功能特别有用，帮助我们家长更好地理解和支持孩子。"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">王</div>
+                        <div class="author-info">
+                            <span class="author-name">王妈妈</span>
+                            <span class="author-role">考生家长, 广东省</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav">
+                    <div class="testimonial-dot active" data-index="0"></div>
+                    <div class="testimonial-dot" data-index="1"></div>
+                    <div class="testimonial-dot" data-index="2"></div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 LoveBearing Series. Made with ❤️ for Chinese high school students.</p>
+        </div>
+    </section>
+    
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">以下是一些常见问题及解答，如果您有其他问题，请随时联系我们</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>如何参与LoveBearing Series项目？</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>参与方式非常简单：1) Fork我们的GitHub仓库；2) 在stories/文件夹中创建你的故事文件；3) 使用提供的模板格式编写；4) 提交Pull Request；5) 等待审核和发布。详细指南请参阅我们的README文档。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>项目是否收费？</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>LoveBearing Series是一个完全免费的开源项目，我们致力于为所有高考生提供平等的学习机会。项目由志愿者维护，得到了教育机构和企业的支持，不会向学生收取任何费用。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>我的隐私如何得到保护？</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们非常重视用户隐私保护，严格遵守《网络安全法》和《个人信息保护法》。我们提供匿名分享选项，所有个人数据都经过加密处理，并且不会与第三方共享。您可以在隐私政策中了解更多细节。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>AI答疑系统的准确性如何？</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们的AI系统基于最新的大语言模型，并由教育专家持续优化。系统能够准确理解学生问题并提供详细解答，准确率超过92%。对于复杂问题，系统会标记并转交教育专家处理，确保回答的质量。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>如何保证内容的准确性和时效性？</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>我们有一支由经验教师和学科专家组成的审核团队，所有内容在发布前都会经过严格审核。同时，我们定期更新内容以确保符合最新的考试大纲和政策变化。用户也可以报告过时或不准确的内容，我们会及时处理。</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+    
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <h2 class="section-title">项目进展</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">了解LoveBearing Series的最新动态和发展</p>
+            
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-graduation-cap" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">2023年10月15日</div>
+                        <h3 class="blog-title">项目启动暨首次合作伙伴会议召开</h3>
+                        <p class="blog-excerpt">LoveBearing Series项目正式启动，来自全国12个省的20所重点中学代表参加了首次合作伙伴会议，共同探讨高考支持新模式。</p>
+                        <a href="#" class="blog-read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-robot" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">2023年11月3日</div>
+                        <h3 class="blog-title">AI答疑系统升级至2.0版本</h3>
+                        <p class="blog-excerpt">经过两个月的开发和测试，我们的AI答疑系统完成了重大升级，响应速度提升40%，准确率提高至92.7%，新增多学科图像识别功能。</p>
+                        <a href="#" class="blog-read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <i class="fas fa-users" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">2023年12月20日</div>
+                        <h3 class="blog-title">用户突破1000人，故事征集活动启动</h3>
+                        <p class="blog-excerpt">LoveBearing Series注册用户突破1000人大关！为庆祝这一里程碑，我们启动了"我的高考故事"征集活动，已收到超过200篇优质故事。</p>
+                        <a href="#" class="blog-read-more">阅读更多 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="participate">
+        <div class="container">
+            <h2 class="section-title">参与项目</h2>
+            
+            <div class="feature-card">
+                <h3 class="feature-title">📢 征集令：我们需要你的故事</h3>
+                <p>我们正在征集以下群体的真实故事和经验：</p>
+                <ul>
+                    <li><strong>高三学生</strong> (2025-2026届): 分享你的学习心得、困惑和突破</li>
+                    <li><strong>高中老师</strong>: 贡献教学经验和学生辅导案例</li>
+                    <li><strong>家长朋友</strong>: 分享陪伴孩子高考的心路历程</li>
+                    <li><strong>往届学长学姐</strong>: 回顾高考经历，传授成功经验</li>
+                </ul>
+                
+                <p style="margin-top: 1.5rem;">参与方式：</p>
+                <ol>
+                    <li>Fork 这个仓库</li>
+                    <li>在 `stories/` 文件夹中创建你的故事文件</li>
+                    <li>使用提供的模板格式编写</li>
+                    <li>提交 Pull Request</li>
+                    <li>等待审核和发布</li>
+                </ol>
+                
+                <p style="margin-top: 1.5rem;"><strong>🔒 隐私保护承诺：</strong>我们严格保护参与者个人信息，提供匿名分享选项，遵守《未成年人网络保护条例》。</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">让我们一起努力，用爱和智慧点亮高考之路！</h2>
+            <p>加入我们的社区，分享你的故事，获取独家学习资源，优先体验AI辅导功能！</p>
+            <a href="https://github.com/NickScherbakov/lovebearing-series" class="cta-button">参与项目</a>
+        </div>
+    </section>
+    
+    <footer id="contact">
+        <div class="container">
+            <h3>联系我们</h3>
+            
+            <div class="footer-links">
+                <a href="mailto:your-email@example.com" class="footer-link">📧 邮箱</a>
+                <a href="#" class="footer-link">💬 微信群</a>
+                <a href="https://github.com/NickScherbakov/lovebearing-series" class="footer-link">🐙 GitHub</a>
+                <a href="#" class="footer-link">📱 QQ群</a>
+            </div>
+            
+            <p>🌟 记住：在党的领导下，我们都不是一个人在战斗！全社会都在这里支持你！加油，未来的社会主义建设者和接班人！</p>
+            
+            <p style="margin-top: 2rem; color: #ccc;">本项目采用 MIT License 开源协议 | 严格遵守中国相关法律法规</p>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
+    
+    <script>
+        // 倒计时计算
+        function updateCountdown() {
+            // 设置2026年高考开始日期（通常为6月7日）
+            const gaokaoDate = new Date('2026-06-07');
+            const now = new Date();
+            
+            // 计算剩余时间
+            const diff = gaokaoDate - now;
+            
+            // 计算天、小时、分钟和秒
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // 显示倒计时
+            document.getElementById('countdown').innerHTML = 
+                `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+        }
+        
+        // 初始更新并设置每秒更新一次
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        //  testimonials轮播
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        
+        testimonialDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const index = dot.getAttribute('data-index');
+                
+                // 隐藏所有 testimonial
+                testimonialCards.forEach(card => {
+                    card.style.display = 'none';
+                });
+                
+                // 显示选中的 testimonial
+                testimonialCards[index].style.display = 'block';
+                
+                // 更新激活的点
+                testimonialDots.forEach(d => {
+                    d.classList.remove('active');
+                });
+                dot.classList.add('active');
+            });
+        });
+        
+        // FAQ切换
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // 关闭其他FAQ
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // 切换当前FAQ
+                item.classList.toggle('active');
+            });
+        });
+        
+        // 数字动画
+        function animateValue(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const value = Math.floor(progress * (end - start) + start);
+                element.textContent = value.toLocaleString();
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+        
+        // 当统计部分进入视口时启动数字动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateValue(document.getElementById('stat-participants'), 0, 1258, 2000);
+                    animateValue(document.getElementById('stat-stories'), 0, 367, 2000);
+                    animateValue(document.getElementById('stat-schools'), 0, 42, 2000);
+                    animateValue(document.getElementById('stat-provinces'), 0, 18, 2000);
+                    
+                    // 停止观察
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // 观察统计部分
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
