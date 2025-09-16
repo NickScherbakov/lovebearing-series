@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事分享 - LoveBearing Series</title>
+    <meta name="description" content="来自真实参与者的学习故事和人生感悟">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero stories-hero">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>💫 LoveBearing Series</h1>
+                    </a>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="index.html#about" class="nav-link">关于我们</a>
+                    <a href="#stories" class="nav-link">故事分享</a>
+                    <a href="index.html#join" class="nav-link">参与方式</a>
+                    <a href="index.html#contact" class="nav-link">联系我们</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1 class="hero-title">故事分享</h1>
+            <p class="hero-description">
+                汇聚来自高考生、老师、家长们的真实经历和智慧
+            </p>
+        </div>
+    </header>
+
+    <!-- Stories Filter -->
+    <section class="section stories-filter">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="story-type">故事类型:</label>
+                    <select id="story-type" class="filter-select">
+                        <option value="all">全部故事</option>
+                        <option value="student">学生故事</option>
+                        <option value="teacher">老师故事</option>
+                        <option value="parent">家长故事</option>
+                        <option value="alumni">往届生故事</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="subject">学科:</label>
+                    <select id="subject" class="filter-select">
+                        <option value="all">全部学科</option>
+                        <option value="math">数学</option>
+                        <option value="chinese">语文</option>
+                        <option value="english">英语</option>
+                        <option value="physics">物理</option>
+                        <option value="chemistry">化学</option>
+                        <option value="biology">生物</option>
+                        <option value="history">历史</option>
+                        <option value="geography">地理</option>
+                        <option value="politics">政治</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sort">排序:</label>
+                    <select id="sort" class="filter-select">
+                        <option value="newest">最新发布</option>
+                        <option value="oldest">最早发布</option>
+                        <option value="popular">最受欢迎</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Grid -->
+    <section id="stories" class="section stories">
+        <div class="container">
+            <div class="stories-grid" id="stories-container">
+                <!-- Stories will be loaded dynamically -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more">
+                <button id="load-more-btn" class="btn btn-primary">加载更多故事</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Modal -->
+    <div id="story-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="story-content">
+                <!-- Story content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>💫 LoveBearing Series</h3>
+                    <p>充满爱意的学习之旅</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="index.html#about">关于我们</a>
+                    <a href="#stories">故事分享</a>
+                    <a href="index.html#join">参与方式</a>
+                    <a href="index.html#contact">联系我们</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/NickScherbakov/lovebearing-series" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LoveBearing Series. Made with ❤️ for Chinese high school students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/stories.js"></script>
+</body>
+</html>
