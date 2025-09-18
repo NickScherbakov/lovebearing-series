@@ -1,2 +1,2 @@
 # Ignore the apicheker.ps1 file
-apicheker.ps1
+*.ps1
