@@ -1,0 +1,38 @@
+name: 故事投稿 Story submission
+description: 提交或完善一篇学习故事
+title: "story: <简短标题>"
+labels: ["story", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你的分享！请尽量使用模板字段，保护隐私。
+  - type: input
+    id: file
+    attributes:
+      label: 目标文件路径
+      description: 例如：stories/我的高三冲刺.md
+      placeholder: stories/<your-title>.md
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 摘要
+      description: 简要概述故事要点（2-3 句话）
+  - type: dropdown
+    id: privacy
+    attributes:
+      label: 隐私级别
+      options: ["公开", "匿名"]
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 提交前检查
+      options:
+        - label: 我已使用 `stories/STORY_TEMPLATE.md`
+          required: true
+        - label: 我已删除或匿名化个人敏感信息
+          required: true

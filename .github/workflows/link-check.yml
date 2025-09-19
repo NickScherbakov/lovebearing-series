@@ -1,0 +1,26 @@
+name: Link Checker
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 3 * * 1"
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run lychee link checker
+        uses: lycheeverse/lychee-action@v1.10.0
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --accept 200,206,429
+            --exclude 'keenetic\.pro'
+            --max-redirects 5
+            --timeout 20s
+            .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
