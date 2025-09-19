@@ -1,5 +1,7 @@
 # 充满爱意系列 LoveBearing Series 💫
 
+![Couple](couple.jpg)
+
 ## 项目简介 Project Overview
 
 **LoveBearing Series** = **充满爱意** = **「爱的诞生」**
