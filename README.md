@@ -1,6 +1,6 @@
 # 充满爱意系列 LoveBearing Series 💫
 
-![Couple](couple.jpg)
+![Couple](docs/couple.jpg)
 
 ## 项目简介 Project Overview
 
