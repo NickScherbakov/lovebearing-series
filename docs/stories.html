@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>故事分享 - LoveBearing Series</title>
     <meta name="description" content="来自真实参与者的学习故事和人生感悟">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,9 +21,10 @@
                 </div>
                 <div class="nav-menu">
                     <a href="index.html" class="nav-link">首页</a>
-                    <a href="index.html#about" class="nav-link">关于我们</a>
+                    <!-- fix anchors to existing sections -->
+                    <a href="index.html#mission" class="nav-link">关于我们</a>
                     <a href="#stories" class="nav-link">故事分享</a>
-                    <a href="index.html#join" class="nav-link">参与方式</a>
+                    <a href="index.html#participate" class="nav-link">参与方式</a>
                     <a href="index.html#contact" class="nav-link">联系我们</a>
                 </div>
             </div>
@@ -34,6 +35,11 @@
             <p class="hero-description">
                 汇聚来自高考生、老师、家长们的真实经历和智慧
             </p>
+            <!-- add CTA to submit story -->
+            <div class="hero-buttons" style="margin-top: 1.5rem;">
+                <a class="btn btn-primary" href="https://github.com/NickScherbakov/lovebearing-series/new/main/stories" target="_blank" rel="noopener">提交你的故事</a>
+                <a class="btn btn-secondary" href="https://github.com/NickScherbakov/lovebearing-series/blob/main/stories/README.md" target="_blank" rel="noopener">查看提交说明</a>
+            </div>
         </div>
     </header>
 
