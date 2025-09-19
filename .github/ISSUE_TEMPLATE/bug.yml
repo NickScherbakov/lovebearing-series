@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a problem in the repo or docs site
+title: "bug: <short>"
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: Describe the issue and expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Step-by-step with links/paths
+  - type: input
+    id: url
+    attributes:
+      label: Affected page/file (URL or path)
